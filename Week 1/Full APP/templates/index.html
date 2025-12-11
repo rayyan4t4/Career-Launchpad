@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Prediction</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-lg">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-700">Next Month Sales Prediction</h1>
+        
+        <form action="/predict" method="post" class="space-y-4">
+            <input type="number" step="any" name="store_id" placeholder="Store ID" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="month" placeholder="Month (1-12)" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="temperature" placeholder="Temperature" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="fuel_price" placeholder="Fuel Price" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="cpi" placeholder="CPI" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="unemployment" placeholder="Unemployment" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="holiday_flag" placeholder="Holiday Flag (0 or 1)" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="prev_month_sales" placeholder="Previous Month Sales" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="prev_2_months_sales" placeholder="Previous 2 Months Sales" class="w-full p-3 border rounded-lg" required>
+            <input type="number" step="any" name="prev_year_sales" placeholder="Previous Year Sales" class="w-full p-3 border rounded-lg" required>
+            
+            <button type="submit" class="w-full bg-blue-500 text-white p-3 rounded-lg hover:bg-blue-600 transition">Predict</button>
+        </form>
+
+        {% if prediction_text %}
+            <div class="mt-6 p-4 bg-green-100 text-green-800 rounded-lg text-center font-semibold">
+                {{ prediction_text }}
+            </div>
+        {% endif %}
+    </div>
+
+</body>
+</html>

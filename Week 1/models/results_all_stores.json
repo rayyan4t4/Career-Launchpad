@@ -1,0 +1,34 @@
+{
+    "xgboost_metrics": {
+        "mae": 473127.84586111107,
+        "rmse": 644203.3129253116,
+        "mape": 10.923127248089644
+    },
+    "arima_avg_mape": 16.261049089845187,
+    "best_model": "XGBoost",
+    "total_stores_used": 45,
+    "total_data_points": 900,
+    "features_used": [
+        "Store",
+        "Month",
+        "Temperature",
+        "Fuel_Price",
+        "CPI",
+        "Unemployment",
+        "Holiday_Flag",
+        "Prev_Month_Sales",
+        "Prev_2_Months_Sales",
+        "Prev_Year_Sales",
+        "Rolling_3M_Avg",
+        "Rolling_6M_Avg",
+        "MoM_Change"
+    ],
+    "training_date_range": {
+        "start": "2011-02-28",
+        "end": "2012-05-31"
+    },
+    "testing_date_range": {
+        "start": "2012-06-30",
+        "end": "2012-09-30"
+    }
+}
